@@ -1,4 +1,4 @@
-#include "Compound.hpp"
+#include "chem/Compound.hpp"
 namespace chemicals
 {
   namespace compounds

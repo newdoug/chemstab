@@ -1,17 +1,22 @@
 cmake_minimum_required(VERSION 3.1)
-project (ChemStab)
-add_definitions("-std=c++17" "-Wall" "-Wextra" "-pedantic" "-Wunused-parameter" "-Wunused" "-pthread" "-Wnoexcept" "-Wshadow")
-set(INCLUDE_DIR chemstab-lib/src/include)
-include_directories(${PROJECT_SOURCE_DIR}/${INCLUDE_DIR})
-set(SOURCES
-  chemstab-bin/src/main/chem/main.cpp
-  ${INCLUDE_DIR}/chem/Compound.cpp
-  )
-# TODO once the graph stuff is working properly, include those sources
-  # ${INCLUDE_DIR}/chem/graphs/Node.cpp
-  # ${INCLUDE_DIR}/chem/graphs/Edge.cpp
-  # ${INCLUDE_DIR}/chem/graphs/WeightedEdge.cpp
-  # ${INCLUDE_DIR}/chem/graphs/EdgeNodePair.cpp
-  # ${INCLUDE_DIR}/chem/graphs/Graph.cpp
-add_executable(${PROJECT_NAME} ${SOURCES})
+project (ChemStab C CXX)
+# version 0.1
+set(${PROJECT_NAME}_VERSION_MAJOR 0)
+set(${PROJECT_NAME}_VERSION_MINOR 1)
 
+set(CMAKE_CXX_STANDARD 17) # C++17 standard
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -Wextra -pedantic -Wunused-parameter -Wunused -pthread -Wnoexcept -Wshadow")
+add_definitions(${CMAKE_CXX_FLAGS})
+
+option(RUN_TESTS "Run unit tests." ON)
+
+set(M_LIB_DIR chemstab-lib)
+set(M_BIN_DIR chemstab-bin)
+add_subdirectory(${M_LIB_DIR})
+
+if(RUN_TESTS)
+  enable_testing()
+  add_subdirectory(${M_LIB_DIR}/src/tests)
+endif()
+
+# set(TARGET ${PROJECT_NAME})
