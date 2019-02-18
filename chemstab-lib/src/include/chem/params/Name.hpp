@@ -12,7 +12,7 @@ namespace chemicals::elements
   {
     constexpr NAME_TYPE HYDROGEN = "hydrogen";
     constexpr NAME_TYPE CARBON = "carbon";
-  }; // namespace names
+  } // namespace names
 
   // maps atomic_number to name of element.
   const std::map<ATOMIC_NUMBER_TYPE, std::string> NAME_MAP

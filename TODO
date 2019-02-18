@@ -1,0 +1,12 @@
+# Future
+
+Some future endeavors:
+*  Benchmark tests
+*  Other build systems support
+*  Static library building
+*  python supprt - cython? Something to be able to be used smoothly within a python program for better visualization and graphics library support
+*  More unit tests
+*  Integrate with datasets collected by others. Use that data to help determine if certain compounds have typically been in certain environments and organs - probably use as training/test/validation data sets
+*  Add specific support for stability within human organs - liver, pancreas, kidneys, lungs, heart, etc.
+*  Some web frontend support - perhaps just be okay with being used in python frontend so we can make use of a framework like django, flask, etc. Will allow us to avoid making e.g. grpc or webassembly support, but maybe that'll be done in the future anyways.
+*  

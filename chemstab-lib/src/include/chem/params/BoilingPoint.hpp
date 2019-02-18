@@ -10,7 +10,7 @@ namespace chemicals::elements
   {
     constexpr BOILING_POINT_TYPE HYDROGEN = 20.28;
     constexpr BOILING_POINT_TYPE CARBON = 4300;
-  }; // namespace boiling_points
+  } // namespace boiling_points
 }
 
 #endif

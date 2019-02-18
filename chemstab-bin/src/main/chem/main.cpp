@@ -1,5 +1,6 @@
 
-#include "Chemical.hpp"
+#include "chem/Chemical.hpp"
+#include "chem/Compound.hpp"
 #include <iostream>
 
 using namespace chemicals::elements;
@@ -13,4 +14,6 @@ int main()
   std::cout << "carbon's name: " << carbon.getName() << '\n';
   std::cout << "carbon's atomic number: " << carbon.getAtomicNumber() << '\n';
   std::cout << "carbon's density: " << carbon.getDensity() << '\n';
+  chemicals::compounds::Compound c;
+  std::cout << c.toString() << '\n';
 }

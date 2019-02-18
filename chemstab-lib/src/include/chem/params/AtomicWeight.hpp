@@ -10,7 +10,7 @@ namespace chemicals::elements
     {
       constexpr ATOMIC_WEIGHT_TYPE HYDROGEN = 1.008;
       constexpr ATOMIC_WEIGHT_TYPE CARBON = 12.011;
-    }; // namespace atomic_weights
+    } // namespace atomic_weights
 }
 
 #endif

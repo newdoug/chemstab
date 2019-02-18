@@ -10,7 +10,7 @@ namespace chemicals::elements
   {
     constexpr ELECTRONEGATIVITY_TYPE HYDROGEN =  2.20;
     constexpr ELECTRONEGATIVITY_TYPE CARBON = 2.55;
-  }; // namespace densities
+  } // namespace densities
 }
 
 #endif

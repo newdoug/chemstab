@@ -10,7 +10,7 @@ namespace chemicals::elements
   {
     constexpr HEAT_CAPACITY_TYPE HYDROGEN =  14.304;
     constexpr HEAT_CAPACITY_TYPE CARBON = 0.709;
-  }; // namespace heat_capactiy
+  } // namespace heat_capactiy
 }
 
 #endif

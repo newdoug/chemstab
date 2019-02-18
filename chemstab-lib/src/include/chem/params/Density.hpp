@@ -10,7 +10,7 @@ namespace chemicals::elements
   {
     constexpr DENSITY_TYPE HYDROGEN =  0.00008988;
     constexpr DENSITY_TYPE CARBON = 2.267;
-  }; // namespace densities
+  } // namespace densities
 }
 
 #endif

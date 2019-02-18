@@ -10,7 +10,7 @@ namespace chemicals::elements
   {
     constexpr MELTING_POINT_TYPE HYDROGEN = 14.01;
     constexpr MELTING_POINT_TYPE CARBON = 3800;
-  }; // namespace melting_points
+  } // namespace melting_points
 }
 
 #endif
