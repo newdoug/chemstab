@@ -11,9 +11,9 @@ using namespace structures::graph;
 namespace
 {
 
-  // void test(Graph, simple)
-  void test()
-  {
+// void test(Graph, simple)
+void test()
+{
     Graph g;
     auto n1 = std::make_shared<Node>("node1"); // unique id
     auto n2 = std::make_shared<Node>("node2"); // unique id
@@ -78,8 +78,8 @@ namespace
     // DijkstraResult is an implementation of ResultType and has specific properties for results related to running the Dijkstra algorithm
     // will throw an exception if g is not defined.
     DijkstraResult d_result = d2.run();
-    // every 
+    // every
 
 
-  }
+}
 } // anonymous namespace

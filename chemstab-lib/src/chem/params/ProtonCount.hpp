@@ -5,11 +5,11 @@
 
 namespace chemicals::elements
 {
-  namespace proton_counts
-  {
-    constexpr NUM_PROTON_TYPE HYDROGEN = 1;
-    constexpr NUM_PROTON_TYPE CARBON = 6;
-  } // namespace proton_counts
+namespace proton_counts
+{
+constexpr NUM_PROTON_TYPE HYDROGEN = 1;
+constexpr NUM_PROTON_TYPE CARBON = 6;
+} // namespace proton_counts
 }
 
 #endif

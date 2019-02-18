@@ -1,2 +1,7 @@
 bin
+bin_*
 **/cmake_files/*
+docs/html
+docs/xml
+docs/latex
+docs/man

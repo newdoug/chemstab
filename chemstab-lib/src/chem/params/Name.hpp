@@ -8,23 +8,23 @@
 
 namespace chemicals::elements
 {
-  namespace names
-  {
-    constexpr NAME_TYPE HYDROGEN = "hydrogen";
-    constexpr NAME_TYPE CARBON = "carbon";
-  } // namespace names
+namespace names
+{
+constexpr NAME_TYPE HYDROGEN = "hydrogen";
+constexpr NAME_TYPE CARBON = "carbon";
+} // namespace names
 
-  // maps atomic_number to name of element.
-  const std::map<ATOMIC_NUMBER_TYPE, std::string> NAME_MAP
-  {
+// maps atomic_number to name of element.
+const std::map<ATOMIC_NUMBER_TYPE, std::string> NAME_MAP
+{
     {ans::HYDROGEN, names::HYDROGEN},
-      {ans::CARBON, names::CARBON},
+    {ans::CARBON, names::CARBON},
 
-  };
+};
 
-  static inline std::string getNameFromAtomicNumber(const ATOMIC_NUMBER_TYPE& number) {
+static inline std::string getNameFromAtomicNumber(const ATOMIC_NUMBER_TYPE& number) {
     return NAME_MAP.at(number);
-  }
+}
 }
 
 #endif

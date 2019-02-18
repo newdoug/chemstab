@@ -2,6 +2,13 @@
 
 BUILD_DIR="bin";
 PROJECT_NAME="ChemStab";
+
+if [ -e "${BUILD_DIR}" ]; then
+  MOVED_BUILD_DIR="${BUILD_DIR}_$(date +%s)";
+  printf "Build directory %s already existed. Moving to '%s'\n" "${BUILD_DIR}" "${MOVED_BUILD_DIR}";
+  mv "${BUILD_DIR}" "${MOVED_BUILD_DIR}";
+  unset MOVED_BUILD_DIR;
+fi
 (
 mkdir -p "${BUILD_DIR}" && cd "${BUILD_DIR}";
 CC=gcc CXX=g++ cmake .. && make;

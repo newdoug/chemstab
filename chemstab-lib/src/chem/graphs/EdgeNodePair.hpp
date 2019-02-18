@@ -7,19 +7,19 @@
 
 namespace structures
 {
-  namespace graph
-  {
+namespace graph
+{
 
-    struct EdgeNodePair
-    {
-      std::shared_ptr<Node> left_node;
-      std::shared_ptr<Edge> edge;
-      std::shared_ptr<Node> right_node;
+struct EdgeNodePair
+{
+    std::shared_ptr<Node> left_node;
+    std::shared_ptr<Edge> edge;
+    std::shared_ptr<Node> right_node;
 
-      EdgeNodePair();
-      EdgeNodePair(std::shared_ptr<Edge> edge, std::shared_ptr<Node> left_node, std::shared_ptr<Node> right_node);
-    };
-  } // namespace graph
+    EdgeNodePair();
+    EdgeNodePair(std::shared_ptr<Edge> edge, std::shared_ptr<Node> left_node, std::shared_ptr<Node> right_node);
+};
+} // namespace graph
 } // namespace structures
 
 #endif

@@ -54,76 +54,76 @@ constexpr uint16_t NUMBER_ATOMIC_ELEMENTS = 140; // TODO change to be correct
 // template<ATOMIC_NUMBER_TYPE T_an, NUM_PROTON_TYPE T_prot, NUM_ELECTRON_TYPE T_elec, INTERNAL_DENSITY_TYPE T_dens, INTERNAL_ATOMIC_WEIGHT_TYPE T_aw, INTERNAL_MELTING_POINT_TYPE T_mp, INTERNAL_BOILING_POINT_TYPE T_bp, INTERNAL_HEAT_CAPACITY_TYPE T_heat_cap, INTERNAL_ELECTRONEGATIVITY_TYPE T_electro>
 struct Element
 {
-  // enum {
-  // atomic_number = T_an,
-  // num_protons = T_prot,
-  // num_electrons = T_elec,
-  // density = T_dens,
-  // atomic_weight = T_aw,
-  // melting_point = T_mp,
-  // boiling_point = T_bp,
-  // heat_capacity = T_heat_cap,
-  // electronegativity = T_electro,
-  // };
+    // enum {
+    // atomic_number = T_an,
+    // num_protons = T_prot,
+    // num_electrons = T_elec,
+    // density = T_dens,
+    // atomic_weight = T_aw,
+    // melting_point = T_mp,
+    // boiling_point = T_bp,
+    // heat_capacity = T_heat_cap,
+    // electronegativity = T_electro,
+    // };
 
-  ATOMIC_NUMBER_TYPE atomic_number;// = T_an,
-  NUM_PROTON_TYPE num_protons;// = T_prot,
-  NUM_ELECTRON_TYPE num_electrons;// = T_elec,
-  INTERNAL_DENSITY_TYPE density;// = T_dens,
-  INTERNAL_ATOMIC_WEIGHT_TYPE atomic_weight;// = T_aw,
-  INTERNAL_MELTING_POINT_TYPE melting_point;// = T_mp,
-  INTERNAL_BOILING_POINT_TYPE boiling_point;// = T_bp,
-  INTERNAL_HEAT_CAPACITY_TYPE heat_capacity;// = T_heat_cap,
-  INTERNAL_ELECTRONEGATIVITY_TYPE electronegativity;// = T_electro,
-  /*! \brief constexpr ctor */
-  // constexpr Element() noexcept {}
-  constexpr Element(ATOMIC_NUMBER_TYPE T_an, NUM_PROTON_TYPE T_prot, NUM_ELECTRON_TYPE T_elec, INTERNAL_DENSITY_TYPE T_dens, INTERNAL_ATOMIC_WEIGHT_TYPE T_aw, INTERNAL_MELTING_POINT_TYPE T_mp, INTERNAL_BOILING_POINT_TYPE T_bp, INTERNAL_HEAT_CAPACITY_TYPE T_heat_cap, INTERNAL_ELECTRONEGATIVITY_TYPE T_electro) noexcept
-    :
-    atomic_number(T_an),
-    num_protons(T_prot),
-    num_electrons(T_elec),
-    density(T_dens),
-    atomic_weight(T_aw),
-    melting_point(T_mp),
-    boiling_point(T_bp),
-    heat_capacity(T_heat_cap),
-    electronegativity(T_electro)
-  {}
-  // ~Element() {} // causes it to give compiler error that Element is non-literal. Therefore, can't be constexpr
+    ATOMIC_NUMBER_TYPE atomic_number;// = T_an,
+    NUM_PROTON_TYPE num_protons;// = T_prot,
+    NUM_ELECTRON_TYPE num_electrons;// = T_elec,
+    INTERNAL_DENSITY_TYPE density;// = T_dens,
+    INTERNAL_ATOMIC_WEIGHT_TYPE atomic_weight;// = T_aw,
+    INTERNAL_MELTING_POINT_TYPE melting_point;// = T_mp,
+    INTERNAL_BOILING_POINT_TYPE boiling_point;// = T_bp,
+    INTERNAL_HEAT_CAPACITY_TYPE heat_capacity;// = T_heat_cap,
+    INTERNAL_ELECTRONEGATIVITY_TYPE electronegativity;// = T_electro,
+    /*! \brief constexpr ctor */
+    // constexpr Element() noexcept {}
+    constexpr Element(ATOMIC_NUMBER_TYPE T_an, NUM_PROTON_TYPE T_prot, NUM_ELECTRON_TYPE T_elec, INTERNAL_DENSITY_TYPE T_dens, INTERNAL_ATOMIC_WEIGHT_TYPE T_aw, INTERNAL_MELTING_POINT_TYPE T_mp, INTERNAL_BOILING_POINT_TYPE T_bp, INTERNAL_HEAT_CAPACITY_TYPE T_heat_cap, INTERNAL_ELECTRONEGATIVITY_TYPE T_electro) noexcept
+        :
+        atomic_number(T_an),
+        num_protons(T_prot),
+        num_electrons(T_elec),
+        density(T_dens),
+        atomic_weight(T_aw),
+        melting_point(T_mp),
+        boiling_point(T_bp),
+        heat_capacity(T_heat_cap),
+        electronegativity(T_electro)
+    {}
+    // ~Element() {} // causes it to give compiler error that Element is non-literal. Therefore, can't be constexpr
 
-  std::string getSymbol() const noexcept {
-    return getSymbolFromAtomicNumber(this->atomic_number);
-  }
-  constexpr auto getAtomicNumber() const noexcept {
-    return this->atomic_number;
-  }
-  constexpr auto getNumberProtons() const noexcept {
-    return this->num_protons;
-  }
-  constexpr auto getNumberElectrons() const noexcept {
-    return this->num_electrons;
-  }
-  std::string getName() const noexcept {
-    return getNameFromAtomicNumber(this->atomic_number);
-  }
-  constexpr DENSITY_TYPE getDensity() const noexcept {
-    return static_cast<DENSITY_TYPE>(this->density) / static_cast<DENSITY_TYPE>(DENSITY_MULTIPLIER);
-  }
-  constexpr ATOMIC_WEIGHT_TYPE getAtomicWeight() const noexcept {
-    return static_cast<ATOMIC_WEIGHT_TYPE>(this->atomic_weight) / static_cast<ATOMIC_WEIGHT_TYPE>(ATOMIC_WEIGHT_MULTIPLIER);
-  }
-  constexpr MELTING_POINT_TYPE getMeltingPoint() const noexcept {
-    return static_cast<MELTING_POINT_TYPE>(this->melting_point) / static_cast<MELTING_POINT_TYPE>(MELTING_POINT_MULTIPLIER);
-  }
-  constexpr BOILING_POINT_TYPE getBoilingPoint() const noexcept {
-    return static_cast<BOILING_POINT_TYPE>(this->boiling_point) / static_cast<BOILING_POINT_TYPE>(BOILING_POINT_MULTIPLIER);
-  }
-  constexpr HEAT_CAPACITY_TYPE getHeatCapacity() const noexcept {
-    return static_cast<HEAT_CAPACITY_TYPE>(this->heat_capacity) / static_cast<HEAT_CAPACITY_TYPE>(HEAT_CAPACITY_MULTIPLIER);
-  }
-  constexpr ELECTRONEGATIVITY_TYPE getElectronegativity() const noexcept {
-    return static_cast<ELECTRONEGATIVITY_TYPE>(this->electronegativity) / static_cast<ELECTRONEGATIVITY_TYPE>(ELECTRONEGATIVITY_MULTIPLIER);
-  }
+    std::string getSymbol() const noexcept {
+        return getSymbolFromAtomicNumber(this->atomic_number);
+    }
+    constexpr auto getAtomicNumber() const noexcept {
+        return this->atomic_number;
+    }
+    constexpr auto getNumberProtons() const noexcept {
+        return this->num_protons;
+    }
+    constexpr auto getNumberElectrons() const noexcept {
+        return this->num_electrons;
+    }
+    std::string getName() const noexcept {
+        return getNameFromAtomicNumber(this->atomic_number);
+    }
+    constexpr DENSITY_TYPE getDensity() const noexcept {
+        return static_cast<DENSITY_TYPE>(this->density) / static_cast<DENSITY_TYPE>(DENSITY_MULTIPLIER);
+    }
+    constexpr ATOMIC_WEIGHT_TYPE getAtomicWeight() const noexcept {
+        return static_cast<ATOMIC_WEIGHT_TYPE>(this->atomic_weight) / static_cast<ATOMIC_WEIGHT_TYPE>(ATOMIC_WEIGHT_MULTIPLIER);
+    }
+    constexpr MELTING_POINT_TYPE getMeltingPoint() const noexcept {
+        return static_cast<MELTING_POINT_TYPE>(this->melting_point) / static_cast<MELTING_POINT_TYPE>(MELTING_POINT_MULTIPLIER);
+    }
+    constexpr BOILING_POINT_TYPE getBoilingPoint() const noexcept {
+        return static_cast<BOILING_POINT_TYPE>(this->boiling_point) / static_cast<BOILING_POINT_TYPE>(BOILING_POINT_MULTIPLIER);
+    }
+    constexpr HEAT_CAPACITY_TYPE getHeatCapacity() const noexcept {
+        return static_cast<HEAT_CAPACITY_TYPE>(this->heat_capacity) / static_cast<HEAT_CAPACITY_TYPE>(HEAT_CAPACITY_MULTIPLIER);
+    }
+    constexpr ELECTRONEGATIVITY_TYPE getElectronegativity() const noexcept {
+        return static_cast<ELECTRONEGATIVITY_TYPE>(this->electronegativity) / static_cast<ELECTRONEGATIVITY_TYPE>(ELECTRONEGATIVITY_MULTIPLIER);
+    }
 
 }; // class Element
 

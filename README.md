@@ -2,9 +2,10 @@
 
 Library starting off as just determining if a given chemical compound is stable under certain environmental conditions such as pressure, temperature, and eventually surrounding chemicals.
 
+For what this will become, see the [TODO](./TODO) file.
+
 ## Requirements
-C++17 compatible compilar and libraries (e.g. g++ could be version 8)
-If running tests, gtest library needs to be installed.
+C++17 compatible compiler and libraries (e.g. g++ could be version 8)
 
 **Author**: Sam Kilgore
 
@@ -19,12 +20,18 @@ Currently only the cmake builder is available. Just run:
 mkdir build && cd build
 CC=gcc CXX=g++ cmake .. && make
 ```
-or just run the given build script:
+or (preferred) just run the given build script:
 ```sh
 ./build.sh
 ```
 
 ### Test Suite
+The tests will run automatically. The tests are written using the single-header first of the [Catch2](https://github.com/catchorg/Catch2) C++ unit-test framework.
 
-To run the tests while installing, ...
-
+### Doxygen docs
+To generate the doxygen documentation:
+```sh
+cd docs
+doxygen Doxyfile
+firefox html/index.html &   # open the generated html main page in firefox
+```
